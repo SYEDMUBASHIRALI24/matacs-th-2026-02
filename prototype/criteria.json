@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "category": "Commercial Solar Installation",
+  "price_ceiling": 260000,
+  "max_weeks": 16,
+  "weighted": [
+    {"id": "experience", "weight": 30, "method": "count_capped", "cap": 12},
+    {"id": "price", "weight": 25, "method": "lowest_over_price"},
+    {"id": "timeline", "weight": 15, "method": "shortest_over_weeks"},
+    {"id": "warranty", "weight": 15, "method": "warranty_blend",
+     "panel_cap": 25, "workmanship_cap": 12, "panel_share": 0.4},
+    {"id": "team", "weight": 15, "method": "checklist",
+     "items": ["named_lead", "crew_stated", "safety_plan", "monitoring_plan"]}
+  ]
+}
